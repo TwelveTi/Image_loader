@@ -1,83 +1,77 @@
-- 22110086 : Tran Van Tuyen
+ID: 22110083.
+NAME: Phan Dinh Trung
 
-# 📱 Image Loader App
+Image Loader App
+React Native - Ứng Dụng Tải Ảnh Đơn Giản
 
-A simple Android application built with React Native that allows users to load an image from a URL and display it in the app UI. This project demonstrates the use of **AsyncTask**, **AsyncTaskLoader**, **network state monitoring**, **broadcast receivers**, and **background service notifications**.
+Mô tả: Một ứng dụng Android cơ bản được xây dựng bằng React Native, cho phép người dùng nhập URL hình ảnh và hiển thị ảnh đó trong giao diện ứng dụng. Dự án này minh họa cách sử dụng AsyncTask, AsyncTaskLoader, kiểm tra trạng thái mạng, broadcast receiver và thông báo từ dịch vụ nền.
 
----
+Mục tiêu:
 
-## 🎯 Objective
+Tạo một ứng dụng React Native có thể:
 
-Create an Android app that loads an image from a user-provided URL and displays it in the UI. The app must incorporate:
+Tải ảnh từ URL do người dùng nhập
 
-- AsyncTask / AsyncTaskLoader (React Native equivalent: async/await)
-- Internet connection handling (via NetInfo)
-- Broadcast receivers (using NetInfo’s event listener)
-- Service notifications (via `react-native-push-notification`)
+Sử dụng AsyncTask hoặc AsyncTaskLoader (tương đương async/await trong React Native)
 
----
+Kiểm tra kết nối Internet bằng NetInfo
 
-## ✅ Features Implemented
+Sử dụng broadcast receiver để theo dõi thay đổi kết nối mạng
 
-### 1. Image Loading
+Hiển thị thông báo từ background service định kỳ bằng react-native-push-notification
 
-- User enters an image URL.
-- Click "Load Image" to fetch and display the image.
-- Displays loading status with `ActivityIndicator`.
-- Shows success or error status message.
+Tính năng chính:
 
-### 2. Internet Connection Handling
+Tải ảnh:
 
-- App uses `@react-native-community/netinfo` to detect internet connection.
-- "Load Image" button is disabled if no connection is available.
-- Displays `"No internet connection"` when offline.
+Người dùng nhập URL vào ô nhập liệu
 
-### 3. Periodic Notifications
+Nhấn nút "Load Image" để tải ảnh
 
-- App uses `react-native-push-notification` to send a local notification every 5 minutes with message:
-  > "Image Loader Service is running"
-- Notification setup runs on Android via channel creation.
+Hiển thị ActivityIndicator khi đang tải
 
----
+Thông báo trạng thái thành công hoặc lỗi
 
-## 🛠️ Technologies Used
+Kiểm tra kết nối mạng:
 
-- React Native
-- TypeScript (or JavaScript)
-- NetInfo for connectivity
-- PushNotification for background notifications
+Sử dụng @react-native-community/netinfo để theo dõi kết nối
 
----
+Nếu không có Internet, nút "Load Image" bị vô hiệu hóa
 
-## 🧪 Example Workflow
+Hiển thị thông báo “No internet connection” khi mất mạng
 
-1. **User Input**:  
-   User inputs a valid image URL in the `TextInput`.
+Gửi thông báo định kỳ:
 
-2. **Connectivity Check**:  
-   The app checks for internet using NetInfo. If offline:
+Cứ mỗi 5 phút, ứng dụng gửi một local notification: "Image Loader Service is running"
 
-   - Disables Load button
-   - Shows `"No internet connection"`
+Thiết lập thông báo qua channel trên Android
 
-3. **Image Loading**:  
-   App fetches the image URL using `fetch()`, and:
+Công nghệ sử dụng:
 
-   - Displays a loading indicator
-   - Shows image if successful
-   - Shows error if failed
+React Native
 
-4. **Background Notification**:  
-   Every 5 minutes, a local notification is shown:
-   > 📸 Image Loader Service is running
+JavaScript hoặc TypeScript
 
----
+NetInfo để kiểm tra kết nối mạng
 
-## 🔐 Permissions
+PushNotification để gửi thông báo nền
 
-The following permissions are required and should be added in `AndroidManifest.xml`:
+Quy trình hoạt động:
 
-```xml
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-```
+Người dùng nhập URL ảnh
+
+Ứng dụng kiểm tra kết nối mạng bằng NetInfo
+
+Nếu offline, nút bị vô hiệu hóa và hiển thị thông báo mất mạng
+
+Khi nhấn Load Image, ứng dụng gọi fetch() để tải ảnh
+
+Hiển thị biểu tượng đang tải
+
+Hiển thị ảnh nếu thành công hoặc lỗi nếu thất bại
+
+Mỗi 5 phút, hiển thị thông báo: "📸 Image Loader Service is running"
+
+Quyền cần thiết trong AndroidManifest.xml:
+
+<uses-permission android:name="android.permission.INTERNET" /> <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
