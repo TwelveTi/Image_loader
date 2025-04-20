@@ -1,4 +1,5 @@
 ID: 22110083.
+
 NAME: Phan Dinh Trung
 
 Image Loader App
@@ -73,5 +74,7 @@ Hiển thị ảnh nếu thành công hoặc lỗi nếu thất bại
 Mỗi 5 phút, hiển thị thông báo: "📸 Image Loader Service is running"
 
 Quyền cần thiết trong AndroidManifest.xml:
-
-<uses-permission android:name="android.permission.INTERNET" /> <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+``
+<uses-permission android:name="android.permission.INTERNET" /> 
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+``
